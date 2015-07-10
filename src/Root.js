@@ -6,7 +6,9 @@ import * as components from './components';
 import * as stores from './stores';
 
 const {
-  Application
+  Application,
+  GithubUser,
+  GithubBrowser
 } = components;
 
 const redux = createRedux(stores);
@@ -29,7 +31,11 @@ export default class Root extends React.Component {
 function renderRoutes(history) {
   return (
     <Router history={history}>
-      <Route path="/" component={Application} />
+      <Route component={Application}>
+        <Route name="browse" path="/" component={GithubBrowser}>
+          <Route name="user" path="users/:username" component={GithubUser} />
+        </Route>
+      </Route>
     </Router>
   );
 }

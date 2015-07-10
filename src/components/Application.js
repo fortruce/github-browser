@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 export default class Application extends React.Component {
   render() {
     return (
       <div>
-        Hello World React!!
+        { this.props.children }
       </div>
     );
   }
