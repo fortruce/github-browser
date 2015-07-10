@@ -9,7 +9,8 @@ const {
   Application,
   GithubUser,
   GithubBrowser,
-  GithubRepo
+  GithubRepo,
+  About
 } = components;
 
 const redux = createRedux(stores);
@@ -33,6 +34,7 @@ function renderRoutes(history) {
   return (
     <Router history={history}>
       <Route component={Application}>
+        <Route path="about" component={About} />
         <Route path="github" component={GithubBrowser}>
           <Route name="user" path=":username" component={GithubUser} />
           <Route name="repo" path=":username/:repo" component={GithubRepo} />

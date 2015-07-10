@@ -4,9 +4,9 @@ import Menu from './Menu';
 export default class Application extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Menu />
-        <div className="body">
+        <div className="container__body">
           { this.props.children }
         </div>
       </div>

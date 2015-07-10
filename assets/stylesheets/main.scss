@@ -1,2 +1,67 @@
-.body {
+@import "~foundation/scss/foundation";
+
+$sidebar-width: 170px;
+
+html {
+  box-sizing: border-box;
+}
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+.container {
+  overflow: hidden;
+  height: 100%;
+  padding-left: $sidebar-width;
+  transition: padding .4s;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 0;
+  }
+
+  .side-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    width: $sidebar-width;
+    transition: all .4s;
+    padding: 0;
+    background-color: #fff;
+
+    &.active {
+      left: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      left: -$sidebar-width;
+    }
+
+    .heading {
+      font-size: 1.3rem;
+    }
+
+    li a {
+      color: #666;
+      padding: .625rem 1rem;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  &__body {
+    margin: 0 auto;
+    max-width: 70%;
+
+    @media screen and (max-width: 768px) {
+      max-width: 90%;
+    }
+  }
 }

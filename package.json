@@ -8,6 +8,7 @@
     "start": "npm run build && node server.js"
   },
   "dependencies": {
+    "foundation": "^4.2.1-1",
     "object-assign": "^3.0.0",
     "react": "^0.13.3",
     "react-router": "^1.0.0-beta3",
