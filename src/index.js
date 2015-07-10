@@ -1,3 +1,5 @@
+import '../assets/stylesheets/main.scss';
+
 import React from 'react';
 import HashHistory from 'react-router/lib/HashHistory';
 import Root from './Root';

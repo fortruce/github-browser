@@ -24,12 +24,19 @@ module.exports = {
       inject: true
     })
   ],
+  resolve: {
+    extensions: ['', '.js', '.scss']
+  },
   module: {
     loaders: [
       {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         loaders: ['react-hot', 'babel?stage=0']
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass?sourceMap"
       }
     ]
   }
