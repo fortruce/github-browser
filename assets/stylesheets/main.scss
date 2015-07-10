@@ -19,8 +19,9 @@ html, body, #app {
   padding-left: $sidebar-width;
   transition: padding .4s;
 
-  @media screen and (max-width: 768px) {
-    padding-left: 0;
+  .rule {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
   }
 
   .side-nav {
@@ -43,7 +44,9 @@ html, body, #app {
     }
 
     .heading {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0;
     }
 
     li a {
@@ -53,6 +56,11 @@ html, body, #app {
       &:hover {
         background-color: #f0f0f0;
       }
+    }
+
+    li.heading a:hover {
+      background-color: inherit;
+      color: #a0a0a0;
     }
   }
 
