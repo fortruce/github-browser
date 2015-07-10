@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Router, Route } from 'react-router';
+import { Router, Route, Redirect } from 'react-router';
 import { Provider } from 'redux/react';
 import { createRedux } from 'redux';
 import * as components from './components';
@@ -8,7 +8,8 @@ import * as stores from './stores';
 const {
   Application,
   GithubUser,
-  GithubBrowser
+  GithubBrowser,
+  GithubRepo
 } = components;
 
 const redux = createRedux(stores);
@@ -32,9 +33,11 @@ function renderRoutes(history) {
   return (
     <Router history={history}>
       <Route component={Application}>
-        <Route name="browse" path="/" component={GithubBrowser}>
-          <Route name="user" path="users/:username" component={GithubUser} />
+        <Route path="github" component={GithubBrowser}>
+          <Route name="user" path=":username" component={GithubUser} />
+          <Route name="repo" path=":username/:repo" component={GithubRepo} />
         </Route>
+        <Redirect from="/" to="/github" />
       </Route>
     </Router>
   );
